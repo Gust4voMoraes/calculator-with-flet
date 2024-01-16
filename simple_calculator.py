@@ -6,27 +6,35 @@ def main(page: ft.page):
     page.window_width = 300
     page.bgcolor = "#78184a"
 
+    #function to read keys
+    def keyboard(e):
+        data = e.control.data
+
+        if data in ["1","2","3","4","5","6","7","8","9","0",".","+","-","*","/","(",")"]:
+                txt.value = str(txt.value) + str(data)
+                page.update()
+
     txt = ft.TextField(
-        #read_only=True,
+        read_only=True,
         border_color="#000000",
         text_style=ft.TextStyle(size=30,color="#FFFFFF")
     )
     page.add(txt)
 
     button_e = ft.ElevatedButton(
-            text="<", bgcolor="#000000", color="#FFFFFF",
+            text="<", bgcolor="#000000", color="#FFFFFF", data="e", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_po = ft.ElevatedButton(
-            text="(", bgcolor="#000000", color="#FFFFFF",
+            text="(", bgcolor="#000000", color="#FFFFFF", data="(", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_pc = ft.ElevatedButton(
-            text=")", bgcolor="#000000", color="#FFFFFF",
+            text=")", bgcolor="#000000", color="#FFFFFF", data=")", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_division = ft.ElevatedButton(
-            text="÷", bgcolor="#000000", color="#FFFFFF",
+            text="÷", bgcolor="#000000", color="#FFFFFF", data="/", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
 
@@ -36,19 +44,19 @@ def main(page: ft.page):
     )
     
     button_7 = ft.ElevatedButton(
-            text="7", bgcolor="#000000", color="#FFFFFF",
+            text="7", bgcolor="#000000", color="#FFFFFF", data="7", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_8 = ft.ElevatedButton(
-            text="8", bgcolor="#000000", color="#FFFFFF",
+            text="8", bgcolor="#000000", color="#FFFFFF", data="8", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_9 = ft.ElevatedButton(
-            text="9", bgcolor="#000000", color="#FFFFFF",
+            text="9", bgcolor="#000000", color="#FFFFFF", data="9", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_multi = ft.ElevatedButton(
-            text="x", bgcolor="#000000", color="#FFFFFF",
+            text="x", bgcolor="#000000", color="#FFFFFF", data="*", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
 
@@ -58,19 +66,19 @@ def main(page: ft.page):
     )
 
     button_4 = ft.ElevatedButton(
-            text="4", bgcolor="#000000", color="#FFFFFF",
+            text="4", bgcolor="#000000", color="#FFFFFF", data="4", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_5 = ft.ElevatedButton(
-            text="5", bgcolor="#000000", color="#FFFFFF",
+            text="5", bgcolor="#000000", color="#FFFFFF", data="5", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_6 = ft.ElevatedButton(
-            text="6", bgcolor="#000000", color="#FFFFFF",
+            text="6", bgcolor="#000000", color="#FFFFFF", data="6", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_sub = ft.ElevatedButton(
-            text="-", bgcolor="#000000", color="#FFFFFF",
+            text="-", bgcolor="#000000", color="#FFFFFF", data="-", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
 
@@ -80,19 +88,19 @@ def main(page: ft.page):
     )
 
     button_1 = ft.ElevatedButton(
-            text="1", bgcolor="#000000", color="#FFFFFF",
+            text="1", bgcolor="#000000", color="#FFFFFF", data="1", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_2 = ft.ElevatedButton(
-            text="2", bgcolor="#000000", color="#FFFFFF",
+            text="2", bgcolor="#000000", color="#FFFFFF", data="2", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_3 = ft.ElevatedButton(
-            text="3", bgcolor="#000000", color="#FFFFFF",
+            text="3", bgcolor="#000000", color="#FFFFFF", data="3", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_add = ft.ElevatedButton(
-            text="+", bgcolor="#000000", color="#FFFFFF",
+            text="+", bgcolor="#000000", color="#FFFFFF", data="+", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
 
@@ -102,19 +110,19 @@ def main(page: ft.page):
     )
 
     button_c = ft.ElevatedButton(
-            text="C", bgcolor="#000000", color="#FFFFFF",
+            text="C", bgcolor="#000000", color="#FFFFFF", data="C", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_0 = ft.ElevatedButton(
-            text="0", bgcolor="#000000", color="#FFFFFF",
+            text="0", bgcolor="#000000", color="#FFFFFF", data="0", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_dot = ft.ElevatedButton(
-            text=".", bgcolor="#000000", color="#FFFFFF",
+            text=".", bgcolor="#000000", color="#FFFFFF", data="*", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
     button_eq = ft.ElevatedButton(
-            text="=", bgcolor="#000000", color="#FFFFFF",
+            text="=", bgcolor="#000000", color="#FFFFFF", data="==", on_click=keyboard,
             style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))
     )
 
